@@ -1,0 +1,227 @@
+export const translations = {
+  en: {
+    // Navigation & Layout
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_publications": "Publications",
+    "nav_courses": "Academic Courses",
+    "cta_contact": "Get in Touch",
+    "footer_rights": "© 2026 by Meytal Fogel-Simhony.",
+    "contact_title": "Get in Touch",
+    "contact_name": "First Name",
+    "contact_last_name": "Last Name",
+    "contact_email": "Email",
+    "contact_phone": "Phone",
+    "contact_message": "Message",
+    "contact_send": "Send Message",
+    "contact_sending": "Sending...",
+    "contact_success": "Message sent successfully!",
+    "social_whatsapp": "WhatsApp",
+    "social_line": "Line",
+    "social_linkedin": "LinkedIn",
+    
+    // Home Page
+    "hero_title_name": "Meytal Fogel-Simhony",
+    "hero_title_suffix": ", Ph.D",
+    "hero_cert_1": "Certified Expressive and Creative Therapy",
+    "hero_cert_2": "Certified Psychodrama Therapist",
+    "hero_cert_3": "Certified Parenting Guide",
+    "hero_quote": "\"It is only in playing that the individual is able to be creative … and it is only in being creative that the individual discovers the self.\"",
+    "hero_quote_author": "— Donald Woods Winnicott",
+    "btn_practice": "My Practice Areas",
+    "btn_contact": "Get in Touch",
+    
+    "practice_title_small": "My Expertise",
+    "practice_title_large": "Practice Areas",
+    
+    "practice_01_title": "Expressive and Creative Arts Therapy",
+    "practice_01_desc": "Expressive and Art Therapy helps treat an array of difficulties, such as: emotional, developmental, social, and even mental disorders.\n\nDuring treatment, we use tools from 6 areas of therapy: visual art therapy, music therapy, movement and dance therapy, drama therapy, psychodrama, and bibliotherapy.",
+    
+    "practice_02_title": "Psychodrama",
+    "practice_02_desc": "Psychodrama is a method of investigation of the individual's inner world, established in Vienna in 1920 by J.L Moreno (1889-1974).\n\nInitially developed as a method of group therapy - therapy which takes place in a group – however further developed as a method of Individual Therapy and is widely practiced as such.",
+    
+    "practice_03_title": "Group Workshops",
+    "practice_03_desc": "A variety of workshops can be set up for groups of approx. 10 teenagers or adults.\n\nWorkshops can be topic focused (Plastic Arts, Psychodrama etc.) and may include a number of experiences from the world of Expressive Arts.",
+    
+    "practice_04_title": "Lecturing",
+    "practice_04_desc": "I have been instructing and moderating groups and workshops on a range of topics, in diverse, multicultural settings, for over 15 years.\n\nLectures are available for educational and professional institutions.",
+    
+    "arts_therapy_title": "What is Arts Therapy?",
+    "at_feat_1_title": "Non-Verbal Communication",
+    "at_feat_1_desc": "It provides an alternative to traditional talk therapy, allowing people to express feelings that may be difficult to put into words.",
+    "at_feat_2_title": "Creative Expression for Healing",
+    "at_feat_2_desc": "Expressive Art Therapy helps individuals process emotions and experiences through various artistic forms like drawing, dance & movement, music, drama & psychodrama, and writing.",
+    "at_feat_3_title": "Enhancing Self-Awareness",
+    "at_feat_3_desc": "The artistic process fosters self-discovery and can offer deeper insights into the thoughts, behaviors, and emotions. It additionally offers the opportunity to upbring contents from the unconscious.",
+    "at_feat_4_title": "Stress Reduction and Emotional Release",
+    "at_feat_4_desc": "Engaging in creative activities can lower stress levels and provide a safe outlet for releasing pent-up emotions.",
+
+    // About Page
+    "about_title_small": "About Me",
+    "about_bio_1": "Multi-modal Expressive Arts Therapist (M.A) who specializes in Psychodrama Therapy. Ph.D. in Psychology.",
+    "about_bio_2": "I have worked for the Ministry of Education in Israel in both Integrative and Special Education School systems, practicing therapy with teenagers who face a range of learning disorders and behavioral and emotional challenges, and have consulted for both teachers and parents.",
+    "about_bio_3": "I have also gained experience working with individuals and groups of adults at a Mental Health Hospital.",
+    "about_bio_4": "Certified as a therapist under ‘The New Authority’, a program for instructing both parents and teachers who deal with severe or violent behavioral problems.",
+    "about_bio_5": "I have been instructing and moderating groups and workshops on a range of topics, in diverse, multicultural settings, for over 15 years.",
+    "about_bio_yahat": "I have been a member of ",
+    "about_bio_yahat_link": "Yahat",
+    "about_bio_yahat_suffix": " (The Israeli Association for Creative Arts Therapies) for over 20 years (Member No. 8061).",
+    "about_bio_mom": "I’m a mother of 4 sweet and challenging children.",
+    
+    "edu_title": "Academic Education",
+    "edu_1_deg": "Ph.D in Psychology",
+    "edu_1_loc": "University of Iasi, Romania",
+    "edu_2_deg": "M.A. Expressive Art Therapy",
+    "edu_2_loc": "Lesley University, Cambridge, MA, USA",
+    "edu_3_deg": "B.A. Media and Communications",
+    "edu_3_loc": "Sapir Academic College, Israel",
+    
+    "cert_title": "Accreditations & Certificates",
+    "cert_1": "Professional Parental Guidance Certificate, Schneider Children’s Hospital, Israel",
+    "cert_2": "Paraprofessional Personnel Certificate of Conformity to Ministry of Education Standards, Oranim Academic College, Israel",
+    "cert_3": "Member, Psychodrama Co-Therapist Guidance Group, RS Center, Kfar Saba, Central District, Israel",
+    "cert_4": "Certificate, Child Group Creative-Arts Instruction, A.V.I. Group Guidance Center, Binyamina, Israel",
+    "cert_5": "Graduate, 1 Year Playback Theatre Professional Training Program, “Spirala” Playback Theatre, Israel",
+    "cert_6": "Graduate, Beginner and Advanced Courses in Theatre and Acting, S.Samoha Institute of Theatre and Therapy, Tel Aviv, Israel",
+    "cert_7": "Graduate, Group Mediation and Guidance Course, Joined Program by “Kolot BaNegev” Association and Sapir Academic College, Israel",
+    
+    "connect_title": "Connect With Me",
+    "connect_desc": "I invite you to reach out for consultation, therapy, or collaboration.",
+    
+    // Courses Page
+    "courses_hero_title": "Academic Courses",
+    "courses_hero_desc": "I serve as a lecturer at Chulalongkorn University, teaching academic courses and workshops for educators, therapists, and Master's degree students in Arts Therapy.",
+    "courses_list_title": "Lecturer at Chulalongkorn University",
+    "courses_list_desc": "Delivering academic courses and workshops for educators, therapists, and students in the Master's degree track in Arts Therapy.",
+    "course_1": "Psychodrama and Sociometry",
+    "course_2": "Expressive Arts Therapy",
+    "course_3": "Developmental Psychology",
+    "course_4": "Ethics in Arts Therapy",
+    "course_5": "Group Therapy",
+    
+    // Publications Page
+    "pubs_title": "Publications &",
+    "pubs_title_suffix": "Research",
+    "pubs_desc": "Explore my research articles and publications on expressive arts therapy, psychodrama, and special education.",
+    "pubs_search": "Search publications...",
+    "pubs_not_found": "No publications found matching your search.",
+    "pub_back": "Back to Publications",
+    "pub_abstract": "Abstract",
+    "pub_view_source": "View Original Source",
+    "pub_no_doc": "No document available for this publication.",
+    "pub_not_found_title": "Publication not found"
+
+  },
+  he: {
+    // Navigation & Layout
+    "nav_home": "בית",
+    "nav_about": "אודות",
+    "nav_publications": "פרסומים",
+    "nav_courses": "קורסים אקדמיים",
+    "cta_contact": "צור קשר",
+    "footer_rights": "© 2026 מיטל פוגל-שמחוני.",
+    "contact_title": "צור קשר",
+    "contact_name": "שם פרטי",
+    "contact_last_name": "שם משפחה",
+    "contact_email": "אימייל",
+    "contact_phone": "טלפון",
+    "contact_message": "הודעה",
+    "contact_send": "שלח הודעה",
+    "contact_sending": "שולח...",
+    "contact_success": "ההודעה נשלחה בהצלחה!",
+    "social_whatsapp": "וואטסאפ",
+    "social_line": "ליין",
+    "social_linkedin": "לינקדאין",
+
+    // Home Page
+    "hero_title_name": "מיטל פוגל שימחוני",
+    "hero_title_suffix": ", (Ph.D)",
+    "hero_cert_1": "מטפלת מוסמכת בהבעה ויצירה",
+    "hero_cert_2": "מטפלת פסיכודרמה מוסמכת",
+    "hero_cert_3": "מדריכת הורים מוסמכת",
+    "hero_quote": "\"רק במשחק, היחיד, ילד או מבוגר, מסוגל להיות יצירתי ולהשתמש באישיותו כולה, ורק בהיותו יצירתי מגלה היחיד את העצמי שלו.\"",
+    "hero_quote_author": "— דונלד ויניקוט",
+    "btn_practice": "תחומי העיסוק שלי",
+    "btn_contact": "צור קשר",
+
+    "practice_title_small": "המומחיות שלי",
+    "practice_title_large": "תחומי עיסוק",
+
+    "practice_01_title": "טיפול בהבעה ויצירה",
+    "practice_01_desc": "טיפול בהבעה ויצירה מסייע בטיפול במגוון קשיים, כגון: קשיים רגשיים, התפתחותיים, חברתיים ואף הפרעות נפשיות.\n\nבמהלך הטיפול אנו משתמשים בכלים מ-6 תחומי טיפול: טיפול באומנות חזותית, טיפול במוזיקה, טיפול בתנועה ומחול, דרמה תרפיה, פסיכודרמה וביבליותרפיה.",
+
+    "practice_02_title": "פסיכודרמה",
+    "practice_02_desc": "פסיכודרמה היא שיטה לחקירת העולם הפנימי של האדם, שנוסדה בוינה בשנת 1920 על ידי יעקב לוי מורנו (1889-1974).\n\nהשיטה פותחה בתחילה כשיטת טיפול קבוצתית - טיפול המתרחש בקבוצה - אך התפתחה בהמשך גם כשיטת טיפול פרטנית והיא נפוצה מאוד ככזו.",
+
+    "practice_03_title": "סדנאות קבוצתיות",
+    "practice_03_desc": "ניתן להקים מגוון סדנאות לקבוצות של כ-10 בני נוער או מבוגרים.\n\nהסדנאות יכולות להיות ממוקדות נושא (אומנות פלסטית, פסיכודרמה וכו') ויכולות לכלול מספר התנסויות מעולם ההבעה והיצירה.",
+
+    "practice_04_title": "הרצאות",
+    "practice_04_desc": "אני מנחה ומדריכה קבוצות וסדנאות במגוון נושאים, בסביבות רב-תרבותיות מגוונות, מזה למעלה מ-15 שנה.\n\nהרצאות זמינות למוסדות חינוכיים ומקצועיים.",
+
+    "arts_therapy_title": "מהו טיפול באומנויות?",
+    "at_feat_1_title": "תקשורת לא מילולית",
+    "at_feat_1_desc": "מספק חלופה לטיפול בשיחות מסורתי, ומאפשר לאנשים להביע רגשות שקשה לבטא במילים.",
+    "at_feat_2_title": "ביטוי יצירתי לריפוי",
+    "at_feat_2_desc": "טיפול בהבעה ויצירה עוזר לאנשים לעבד רגשות וחוויות באמצעות צורות אמנותיות שונות כמו ציור, ריקוד ותנועה, מוזיקה, דרמה ופסיכודרמה וכתיבה.",
+    "at_feat_3_title": "הגברת המודעות העצמית",
+    "at_feat_3_desc": "התהליך האמנותי מעודד גילוי עצמי ויכול להציע תובנות עמוקות יותר לגבי מחשבות, התנהגויות ורגשות. הוא מאפשר גם העלאת תכנים מהלא-מודע.",
+    "at_feat_4_title": "הפחתת מתח ושחרור רגשי",
+    "at_feat_4_desc": "עיסוק בפעילויות יצירתיות יכול להוריד את רמות המתח ולספק מוצא בטוח לשחרור רגשות מודחקים.",
+
+    // About Page
+    "about_title_small": "קצת עליי",
+    "about_bio_1": "מטפלת בהבעה ויצירה רב-תחומית (M.A) המתמחה בפסיכודרמה. בעלת דוקטורט בפסיכולוגיה.",
+    "about_bio_2": "עבדתי במשרד החינוך בישראל, הן בחינוך הרגיל והן בחינוך המיוחד, בטיפול בבני נוער המתמודדים עם מגוון לקויות למידה וקשיים התנהגותיים ורגשיים, וייעצתי למורים ולהורים.",
+    "about_bio_3": "צברתי ניסיון גם בעבודה עם יחידים וקבוצות של מבוגרים בבית חולים לבריאות הנפש.",
+    "about_bio_4": "מוסמכת כמטפלת בגישת 'הסמכות החדשה', תוכנית להדרכת הורים ומורים המתמודדים עם בעיות התנהגות קשות או אלימות.",
+    "about_bio_5": "אני מנחה ומדריכה קבוצות וסדנאות במגוון נושאים, בסביבות רב-תרבותיות מגוונות, מזה למעלה מ-15 שנה.",
+    "about_bio_yahat": "אני חברה ב",
+    "about_bio_yahat_link": "י.ה.ת",
+    "about_bio_yahat_suffix": " (האגודה הישראלית לטיפול באמצעות אמנויות) מזה למעלה מ-20 שנה (מספר חבר 8061).",
+    "about_bio_mom": "אני אמא ל-4 ילדים מתוקים ומאתגרים.",
+
+    "edu_title": "השכלה אקדמית",
+    "edu_1_deg": "דוקטורט בפסיכולוגיה",
+    "edu_1_loc": "אוניברסיטת יאשי, רומניה",
+    "edu_2_deg": "תואר שני בטיפול בהבעה ויצירה",
+    "edu_2_loc": "אוניברסיטת לסלי, קיימברידג', ארה\"ב",
+    "edu_3_deg": "תואר ראשון בתקשורת",
+    "edu_3_loc": "המכללה האקדמית ספיר, ישראל",
+
+    "cert_title": "הסמכות ותעודות",
+    "cert_1": "תעודת הדרכת הורים מקצועית, מרכז שניידר לרפואת ילדים, ישראל",
+    "cert_2": "תעודת עובד פרא-רפואי בהתאם לתקני משרד החינוך, מכללת אורנים, ישראל",
+    "cert_3": "חברה בקבוצת הדרכה למטפלי פסיכודרמה, מרכז RS, כפר סבא, ישראל",
+    "cert_4": "תעודה בהנחיית קבוצות יצירה לילדים, מרכז A.V.I., בנימינה, ישראל",
+    "cert_5": "בוגרת תוכנית הכשרה מקצועית בתיאטרון פלייבק (שנה), תיאטרון פלייבק 'ספירלה', ישראל",
+    "cert_6": "בוגרת קורסים למתחילים ומתקדמים בתיאטרון ומשחק, מכון ס. סמוכה לתיאטרון וטיפול, תל אביב, ישראל",
+    "cert_7": "בוגרת קורס גישור והנחיית קבוצות, תוכנית משותפת של עמותת 'קולות בנגב' והמכללה האקדמית ספיר, ישראל",
+
+    "connect_title": "צור קשר",
+    "connect_desc": "אני מזמינה אותך ליצור קשר לייעוץ, טיפול או שיתוף פעולה.",
+
+    // Courses Page
+    "courses_hero_title": "קורסים אקדמיים",
+    "courses_hero_desc": "אני מרצה באוניברסיטת צ'ולאלונגקורן, ומלמדת קורסים אקדמיים וסדנאות לאנשי חינוך, מטפלים וסטודנטים לתואר שני בטיפול באומנויות.",
+    "courses_list_title": "מרצה באוניברסיטת צ'ולאלונגקורן",
+    "courses_list_desc": "מעבירה קורסים אקדמיים וסדנאות לאנשי חינוך, מטפלים וסטודנטים במסלול לתואר שני בטיפול באומנויות.",
+    "course_1": "פסיכודרמה וסוציומטריה",
+    "course_2": "טיפול בהבעה ויצירה",
+    "course_3": "פסיכולוגיה התפתחותית",
+    "course_4": "אתיקה בטיפול באומנויות",
+    "course_5": "טיפול קבוצתי",
+
+    // Publications Page
+    "pubs_title": "פרסומים ו",
+    "pubs_title_suffix": "מחקר",
+    "pubs_desc": "גלו את מאמרי המחקר והפרסומים שלי בנושאי טיפול בהבעה ויצירה, פסיכודרמה וחינוך מיוחד.",
+    "pubs_search": "חיפוש פרסומים...",
+    "pubs_not_found": "לא נמצאו פרסומים התואמים את החיפוש שלך.",
+    "pub_back": "חזרה לפרסומים",
+    "pub_abstract": "תקציר",
+    "pub_view_source": "צפייה במקור",
+    "pub_no_doc": "אין מסמך זמין עבור פרסום זה.",
+    "pub_not_found_title": "הפרסום לא נמצא"
+  }
+};
