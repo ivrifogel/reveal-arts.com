@@ -1,36 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
-import { useQuery } from '@tanstack/react-query';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useCallback } from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calendar, Users, FileText, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Users, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/components/LanguageContext';
+import { publications } from '@/data/publications';
 
-export default function PublicationDetails() {
-  const { id } = useParams();
-  const [user, setUser] = useState(null);
-  const { t, language } = useLanguage();
+function PdfViewer({ url, title }) {
+  const [key, setKey] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const gviewUrl = `https://docs.google.com/gview?url=${encodeURIComponent(url)}&embedded=true`;
 
-  useEffect(() => {
-    base44.auth.me().then(setUser).catch(() => setUser(null));
+  const handleLoad = useCallback(() => {
+    setLoaded(true);
   }, []);
 
-  const { data: publication, isLoading } = useQuery({
-    queryKey: ['publication', id],
-    queryFn: async () => {
-      const results = await base44.entities.Publication.filter({ id });
-      return results[0];
-    },
-  });
+  // Auto-retry: if the iframe hasn't visually loaded after 4s, reload it
+  React.useEffect(() => {
+    setLoaded(false);
+    const timer = setTimeout(() => {
+      if (!loaded) {
+        setKey(k => k + 1);
+      }
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [key]);
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white pt-12 md:pt-32 flex justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#3b93a8]"></div>
-      </div>
-    );
-  }
+  return (
+    <div className="relative w-full h-[800px]">
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+          <div className="text-center">
+            <div className="w-8 h-8 border-4 border-gray-200 border-t-[#3b93a8] rounded-full animate-spin mx-auto mb-3"></div>
+            <p className="text-gray-400 text-sm">Loading document...</p>
+          </div>
+        </div>
+      )}
+      <iframe
+        key={key}
+        src={gviewUrl}
+        className="w-full h-full"
+        title={title}
+        onLoad={handleLoad}
+      />
+    </div>
+  );
+}
+
+export default function PublicationDetails() {
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+  const { t, language } = useLanguage();
+
+  const publication = publications.find(p => p.id === id);
 
   if (!publication) {
     return (
@@ -63,7 +85,7 @@ export default function PublicationDetails() {
               <h1 className="font-serif text-3xl text-gray-800 mb-4 leading-tight">
                 {publication.title}
               </h1>
-              
+
               <div className="space-y-4 text-sm">
                 {publication.authors && (
                   <div className="flex items-start gap-3 text-gray-600">
@@ -71,7 +93,7 @@ export default function PublicationDetails() {
                     <span>{publication.authors}</span>
                   </div>
                 )}
-                
+
                 {publication.year && (
                   <div className="flex items-center gap-3 text-gray-600">
                     <Calendar className="w-5 h-5 text-[#3b93a8] shrink-0" />
@@ -85,6 +107,7 @@ export default function PublicationDetails() {
                     <span className="italic">{publication.journal}</span>
                   </div>
                 )}
+
               </div>
             </div>
 
@@ -97,39 +120,13 @@ export default function PublicationDetails() {
               </div>
             )}
 
-            {publication.external_link && (
-              <a 
-                href={publication.external_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full px-6 py-3 border border-[#3b93a8] text-[#3b93a8] font-medium rounded-xl hover:bg-[#3b93a8] hover:text-white transition-all shadow-sm"
-              >
-                <ExternalLink className="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" />
-                {t('pub_view_source')}
-              </a>
-            )}
           </div>
 
           {/* Content Viewer */}
           <div className="lg:col-span-2">
             {publication.file_url ? (
               <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-[#cac5e1] min-h-[800px]">
-                {/* Check if file is likely an image */}
-                {/\.(jpg|jpeg|png|gif|webp)$/i.test(publication.file_url) ? (
-                  <img 
-                    src={publication.file_url} 
-                    alt={publication.title}
-                    className="w-full h-auto"
-                  />
-                ) : (
-                  /* Use Google Docs Viewer for PDFs to prevent auto-download and ensure embedding */
-                  <iframe
-                    src={`https://docs.google.com/gview?url=${encodeURIComponent(publication.file_url)}&embedded=true`}
-                    className="w-full h-[800px]"
-                    title={publication.title}
-                    frameBorder="0"
-                  />
-                )}
+                <PdfViewer url={publication.file_url} title={publication.title} />
               </div>
             ) : (
               <div className="bg-gray-50 rounded-2xl p-12 text-center border border-dashed border-gray-300">

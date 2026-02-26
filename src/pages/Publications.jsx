@@ -1,35 +1,24 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
-import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
-import { FileText, ExternalLink, Calendar, Users, Plus, Search } from 'lucide-react';
+import { FileText, Calendar, Users, Search } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { useLanguage } from '@/components/LanguageContext';
+import { publications } from '@/data/publications';
 
 export default function Publications() {
-  const [user, setUser] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const { t } = useLanguage();
-
-  React.useEffect(() => {
-    base44.auth.me().then(setUser).catch(() => setUser(null));
-  }, []);
-
-  const { data: publications = [], isLoading } = useQuery({
-    queryKey: ['publications'],
-    queryFn: () => base44.entities.Publication.list('-year'),
-  });
 
   const filteredPublications = publications.filter(pub => {
     const query = searchQuery.toLowerCase();
     const titleMatch = pub.title?.toLowerCase().includes(query);
     const abstractMatch = pub.abstract?.toLowerCase().includes(query);
-    return titleMatch || abstractMatch;
+    const authorMatch = pub.authors?.toLowerCase().includes(query);
+    return titleMatch || abstractMatch || authorMatch;
   });
 
   return (
@@ -68,22 +57,7 @@ export default function Publications() {
             />
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-1 gap-6">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="animate-pulse">
-                  <CardHeader>
-                    <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : filteredPublications.length === 0 ? (
+          {filteredPublications.length === 0 ? (
             <div className="text-center py-16">
               <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
               <p className="text-gray-500">{t('pubs_not_found')}</p>
@@ -103,8 +77,8 @@ export default function Publications() {
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                           <CardTitle className="font-serif text-2xl text-gray-800 mb-2">
-                            <Link 
-                              to={createPageUrl('PublicationDetails', { id: pub.id })}
+                            <Link
+                              to={`/PublicationDetails?id=${pub.id}`}
                               className="hover:text-[#3b93a8] transition-colors"
                             >
                               {pub.title}
