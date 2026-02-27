@@ -253,7 +253,8 @@ function LayoutContent({ children, currentPageName }) {
       <footer className="bg-[#3b93a8] border-t border-[#2a6b7a] py-8 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-2">
           <div className="text-center md:text-left">
-            <p className="text-xs text-white/90 font-medium">{t('footer_rights')}</p>
+            <p className="font-serif text-sm text-white font-medium tracking-wide">Reveal Arts</p>
+            <p className="text-xs text-white/70 mt-1">{t('footer_rights')}</p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <a 

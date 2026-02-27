@@ -72,7 +72,7 @@ export default function Publications() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="hover:shadow-xl transition-all duration-300 border-[#cac5e1]/30 hover:border-[#3b93a8]/50">
+                  <Card className="hover:shadow-xl transition-all duration-300 border-[#cac5e1]/30 hover:border-[#3b93a8]/50 border-l-4 border-l-[#3b93a8]">
                     <CardHeader>
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
